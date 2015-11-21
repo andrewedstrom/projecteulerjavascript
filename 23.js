@@ -1,3 +1,4 @@
+console.time("Solution time");
 var finalSum = 0;
 var abundants = [];
 var tmp = 0;
@@ -21,7 +22,7 @@ for (var i = 1; i < 28124; i++) {
 //the sum of two abundant numbers
 
 var array = [];
-for (var i = 1; i < 28124; i++) {
+for (var i = 1; i < 20162; i++) {
 	var found = false;
 	for(var j = 0; abundants[j] < i && j< abundants.length && !found; j++) {
 		for(var k = j; abundants[k] <= i - abundants[j] && k < abundants.length && !found; k++) {
@@ -31,7 +32,7 @@ for (var i = 1; i < 28124; i++) {
 		}
 	}
 	if (!found) finalSum += i;
-	if (i%1000 === 0) console.log('i', i);
 }
 
 console.log('The sum of all the positive integers which cannot be written as the sum of two abundant numbers is ', finalSum);
+console.timeEnd("Solution time");
